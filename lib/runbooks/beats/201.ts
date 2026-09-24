@@ -16,7 +16,7 @@ export const RUNBOOK_SECTIONS_201 = [
         id: "ask-ddd-all",
         title: "Ask DDD of the application",
         promptType: "reusable",
-        detail: "Ask the all-codebase agent for domain-driven design.",
+        detail: "",
         example: "/ask what is the domain driven design of the application.",
       },
       {
@@ -30,7 +30,7 @@ export const RUNBOOK_SECTIONS_201 = [
         id: "ask-ddd-invoice-table",
         title: "Ask DDD of the invoice table",
         promptType: "reusable",
-        detail: "Ask for domain-driven design of the invoice table only.",
+        detail: "",
         example: "/ask what is the domain driven design of the @invoice-table.tsx",
       },
       {
@@ -38,14 +38,14 @@ export const RUNBOOK_SECTIONS_201 = [
         title: "Check context usage",
         promptType: "none",
         detail:
-          "Go to Agent 1 All chat. Select the Context Usage indicator below the chat. Go to Agent 2 Target. Select the Context Usage indicator below the chat.",
+          "Go to Agent 1 All chat. Click the Context Usage indicator below the chat. Go to Agent 2 Target. Click the Context Usage indicator below the chat.",
       },
       {
         id: "compare-agents",
         title: "Compare agents",
         promptType: "none",
         detail:
-          "Agent 1 maps all the domains in the whole codebase. Agent 2 maps half of the domains based on the targeted context.",
+          "Agent 1 maps all the domains in the whole codebase. Its context window shows X%. Agent 2 maps half of the domains based on the targeted context. Its context window shows Y%. The difference in context window may not be significant but can affect larger repositories.",
       },
       {
         id: "ask-cross-context",
@@ -75,7 +75,7 @@ export const RUNBOOK_SECTIONS_201 = [
         title: "Promote create-api to project",
         promptType: "reusable",
         detail:
-          "Promote the create-api skill so teammates can use it. Open skill in .cursor/skills. Explore the other project skills for this repository, such as add-dashboard-widget, draft-collection-email, or write-prisma-query.",
+          "Promote the create-api skill so teammates can use it. Open skill in .cursor/skills. Review the other project skills for this repository, such as add-dashboard-widget, draft-collection-email, or write-prisma-query.",
         example: "Promote the create-api skill to this project.",
       },
     ],
@@ -89,21 +89,21 @@ export const RUNBOOK_SECTIONS_201 = [
         title: "Enable Linear MCP",
         promptType: "none",
         detail:
-          "Let’s start the issue tracker’s MCP server (in this case, Linear) to get a ticket to this project. Review MCP servers in Customize -> MCPs. Enable the Linear MCP server.",
+          "Let’s start the issue tracker’s MCP server. For this workshop, that is Linear. Get a ticket for this project. Review MCP servers in Customize > MCPs. Enable the Linear MCP server.",
       },
       {
         id: "mcp-allowlist",
         title: "Check MCP allowlist",
         promptType: "none",
         detail:
-          "Go to Settings -> Agents -> Execution and Approvals -> Allowlist Options -> MCP Allowlist to check valid MCP servers and tools from your administrator.",
+          "Go to Settings > Agents > Execution and Approvals > Allowlist Options > MCP Allowlist to check valid MCP servers and tools from your administrator.",
       },
       {
         id: "ask-linear-bug",
         title: "List open issues",
         promptType: "adaptable",
         detail:
-          "Someone reported a bug and it was logged in our issue tracker. I want more information on it. Explore the tool calls to Linear MCP server.",
+          "Open a new agent. Someone reported a bug and it was logged in our issue tracker. I want more information on it. Review the tool calls to the Linear MCP server.",
         example: "List the open issues from our issue tracker.",
       },
       {
@@ -111,14 +111,14 @@ export const RUNBOOK_SECTIONS_201 = [
         title: "Add plugin",
         promptType: "none",
         detail:
-          "A teammate created a plugin for standardizing bug fixes. Go to Customize -> Plugins -> Add -> From Local Repository. Find the plugins/standard-bug-fix file directory and add it.",
+          "A teammate created a plugin for standardizing bug fixes. Go to Customize > Plugins > Add > From Local Repository. Find the plugins/standard-bug-fix file directory and add it.",
       },
       {
         id: "check-plugin",
         title: "Enable Standard bug fix plugin",
         promptType: "none",
         detail:
-          "Go to Customize -> Plugins. Go to Personal. Select Add to enable the “Standard bug fix” plugin. Show that the plugin has skills, rules, and MCP server.",
+          "Go to Customize > Plugins. Go to Personal. Click Add to enable the “Standard bug fix” plugin. Show that the plugin has skills, rules, and MCP server.",
       },
       {
         id: "standard-bug-fix",
@@ -170,9 +170,10 @@ export const RUNBOOK_SECTIONS_201 = [
         id: "canvas-subagent-progress",
         title: "Canvas subagent progress",
         promptType: "adaptable",
-        detail: "Use Canvas to keep track of the progress of subagents and their tasks.",
+        detail:
+          "Use Canvas to keep track of the progress of subagents and their tasks. Review Canvas with subagent progress and worktree conflicts.",
         example:
-          "Update Canvas with progress of subagents and to-dos. Summarize the models for each subagent and supervisor.",
+          "Update Canvas with subagent progress and models used. Make a list of worktree conflicts as you encounter them.",
       },
       {
         id: "ledgerly-reviewer-check",

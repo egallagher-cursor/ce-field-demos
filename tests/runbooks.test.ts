@@ -90,7 +90,7 @@ describe("runbook catalog", () => {
     expect(beat("fix")?.example).toBe("Fix the failing test.");
     expect(beat("allowlist")?.example).toBeUndefined();
     expect(beat("allowlist")?.detail).toBe(
-      "Let’s change how our agent asks for approvals by configuring an allowlist - a known set of commands that Grok Build can run without asking for review. Go to Settings -> Agents -> Executions & Approvals -> Run Mode -> Allowlist.",
+      "Let’s change how our agent asks for approvals by configuring an allowlist - a known set of commands that Grok Build can run without asking for review. Go to Settings > Agents > Executions & Approvals > Run Mode > Allowlist.",
     );
     expect(beat("verify-email")?.promptType).toBe("none");
     expect(beat("verify-email")?.example).toBeUndefined();
@@ -125,7 +125,7 @@ describe("runbook catalog", () => {
       "If I want to revert the code, I can restore from a checkpoint. Scroll back to a prompt before updating the feature. Select the restore icon next to the prompt.",
     );
     expect(beat("rule")?.detail).toBe(
-      "Let’s create a user rule so the agent doesn’t try to improve the invoice UI without our approval. Use /create-rule, a built-in skill, to create a rule. Go to Customize -> Rules -> User to view the rule.",
+      "Let’s create a user rule so the agent doesn’t try to improve the invoice UI without our approval. Use /create-rule, a built-in skill, to create a rule. Go to Customize > Rules > User to view the rule.",
     );
     expect(beat("rule")?.example).toBe(
       "/create-rule Preserve the invoice view. Do not rename, restyle, or rearrange invoice screens unless the user names the **exact** new copy (or a specific layout change). This is a personal rule.",
@@ -133,7 +133,7 @@ describe("runbook catalog", () => {
     expect(beat("test-rule")?.detail).toBe("");
     expect(beat("test-rule")?.example).toBe('Change "Line Items" in the UI to something else.');
     expect(beat("skill")?.detail).toBe(
-      "Let’s create a user skill that tells me the domain breakdown and available APIs. Go to Customize -> Skills to view the skill.",
+      "Let’s create a user skill that tells me the domain breakdown and available APIs. Go to Customize > Skills to view the skill.",
     );
     expect(beat("skill")?.example).toBe(
       "/create-skill Use domain-driven design to break down the domains in this application and match it to available APIs or data schemas. This is a personal skill.",
@@ -144,7 +144,7 @@ describe("runbook catalog", () => {
     expect(beat("canvas")?.example).toBe("Create a canvas explaining what we did today.");
     expect(beat("mcp")?.title).toBe("MCP / Figma");
     expect(beat("mcp")?.detail).toBe(
-      "Ask Grok Build to create a slideshow in Figma using MCP Servers. Find a MCP server for slideshow generation in Grok Build. Go to Customize -> MCPs -> Figma.",
+      "Ask Grok Build to create a slideshow in Figma using MCP Servers. Find a MCP server for slideshow generation in Grok Build. Go to Customize > MCPs > Figma.",
     );
     expect(beat("mcp")?.example).toBe(
       "Create three slides in Figma Slides outlining how I used Grok Build to develop a new feature. I want to use this as part of my demo showcase.",
@@ -230,7 +230,7 @@ describe("runbook catalog", () => {
       "Open one agent and ask it for information about the entire codebase.",
     );
     expect(beat("rename-agent-1-all")?.example).toBe("/rename-chat Agent 1 All");
-    expect(beat("ask-ddd-all")?.detail).toBe("Ask the all-codebase agent for domain-driven design.");
+    expect(beat("ask-ddd-all")?.detail).toBe("");
     expect(beat("ask-ddd-all")?.example).toBe(
       "/ask what is the domain driven design of the application.",
     );
@@ -238,21 +238,19 @@ describe("runbook catalog", () => {
       "Open a second agent for a new targeted context window.",
     );
     expect(beat("rename-agent-2-target")?.example).toBe("/rename-chat Agent 2 Target");
-    expect(beat("ask-ddd-invoice-table")?.detail).toBe(
-      "Ask for domain-driven design of the invoice table only.",
-    );
+    expect(beat("ask-ddd-invoice-table")?.detail).toBe("");
     expect(beat("ask-ddd-invoice-table")?.example).toBe(
       "/ask what is the domain driven design of the @invoice-table.tsx",
     );
     expect(beat("context-usage")?.promptType).toBe("none");
     expect(beat("context-usage")?.detail).toBe(
-      "Go to Agent 1 All chat. Select the Context Usage indicator below the chat. Go to Agent 2 Target. Select the Context Usage indicator below the chat.",
+      "Go to Agent 1 All chat. Click the Context Usage indicator below the chat. Go to Agent 2 Target. Click the Context Usage indicator below the chat.",
     );
     expect(beat("context-usage")?.example).toBeUndefined();
     expect(beat("compare-agents")?.promptType).toBe("none");
     expect(beat("compare-agents")?.example).toBeUndefined();
     expect(beat("compare-agents")?.detail).toBe(
-      "Agent 1 maps all the domains in the whole codebase. Agent 2 maps half of the domains based on the targeted context.",
+      "Agent 1 maps all the domains in the whole codebase. Its context window shows X%. Agent 2 maps half of the domains based on the targeted context. Its context window shows Y%. The difference in context window may not be significant but can affect larger repositories.",
     );
     expect(beat("ask-cross-context")?.detail).toBe(
       "Agent 1 mapped all domains; Agent 2 can reuse that summary. Go to Agent 2 Target chat.",
@@ -267,31 +265,31 @@ describe("runbook catalog", () => {
       "/create-skill for how to create a new API. Follow the standards in this repo. This is a personal skill named create-api.",
     );
     expect(beat("promote-create-api-project")?.detail).toBe(
-      "Promote the create-api skill so teammates can use it. Open skill in .cursor/skills. Explore the other project skills for this repository, such as add-dashboard-widget, draft-collection-email, or write-prisma-query.",
+      "Promote the create-api skill so teammates can use it. Open skill in .cursor/skills. Review the other project skills for this repository, such as add-dashboard-widget, draft-collection-email, or write-prisma-query.",
     );
     expect(beat("promote-create-api-project")?.example).toBe("Promote the create-api skill to this project.");
     expect(beat("add-linear-mcp")?.detail).toBe(
-      "Let’s start the issue tracker’s MCP server (in this case, Linear) to get a ticket to this project. Review MCP servers in Customize -> MCPs. Enable the Linear MCP server.",
+      "Let’s start the issue tracker’s MCP server. For this workshop, that is Linear. Get a ticket for this project. Review MCP servers in Customize > MCPs. Enable the Linear MCP server.",
     );
     expect(beat("add-linear-mcp")?.example).toBeUndefined();
     expect(beat("mcp-allowlist")?.promptType).toBe("none");
     expect(beat("mcp-allowlist")?.example).toBeUndefined();
     expect(beat("mcp-allowlist")?.detail).toBe(
-      "Go to Settings -> Agents -> Execution and Approvals -> Allowlist Options -> MCP Allowlist to check valid MCP servers and tools from your administrator.",
+      "Go to Settings > Agents > Execution and Approvals > Allowlist Options > MCP Allowlist to check valid MCP servers and tools from your administrator.",
     );
     expect(beat("ask-linear-bug")?.detail).toBe(
-      "Someone reported a bug and it was logged in our issue tracker. I want more information on it. Explore the tool calls to Linear MCP server.",
+      "Open a new agent. Someone reported a bug and it was logged in our issue tracker. I want more information on it. Review the tool calls to the Linear MCP server.",
     );
     expect(beat("ask-linear-bug")?.example).toBe("List the open issues from our issue tracker.");
     expect(beat("add-local-plugin")?.promptType).toBe("none");
     expect(beat("add-local-plugin")?.example).toBeUndefined();
     expect(beat("add-local-plugin")?.detail).toBe(
-      "A teammate created a plugin for standardizing bug fixes. Go to Customize -> Plugins -> Add -> From Local Repository. Find the plugins/standard-bug-fix file directory and add it.",
+      "A teammate created a plugin for standardizing bug fixes. Go to Customize > Plugins > Add > From Local Repository. Find the plugins/standard-bug-fix file directory and add it.",
     );
     expect(beat("check-plugin")?.promptType).toBe("none");
     expect(beat("check-plugin")?.example).toBeUndefined();
     expect(beat("check-plugin")?.detail).toBe(
-      "Go to Customize -> Plugins. Go to Personal. Select Add to enable the “Standard bug fix” plugin. Show that the plugin has skills, rules, and MCP server.",
+      "Go to Customize > Plugins. Go to Personal. Click Add to enable the “Standard bug fix” plugin. Show that the plugin has skills, rules, and MCP server.",
     );
     expect(beat("standard-bug-fix")?.detail).toBe(
       "Let’s fix the bug and update the issue with the standard template. Go to the issue in Linear and review the comments following the bug template.",
@@ -322,10 +320,10 @@ describe("runbook catalog", () => {
     expect(beat("multitask-resolve-dispute")?.example).toBe("/multitask @resolve-dispute.md");
     expect(beat("canvas-subagent-progress")?.promptType).toBe("adaptable");
     expect(beat("canvas-subagent-progress")?.detail).toBe(
-      "Use Canvas to keep track of the progress of subagents and their tasks.",
+      "Use Canvas to keep track of the progress of subagents and their tasks. Review Canvas with subagent progress and worktree conflicts.",
     );
     expect(beat("canvas-subagent-progress")?.example).toBe(
-      "Update Canvas with progress of subagents and to-dos. Summarize the models for each subagent and supervisor.",
+      "Update Canvas with subagent progress and models used. Make a list of worktree conflicts as you encounter them.",
     );
     expect(beat("ledgerly-reviewer-check")?.detail).toBe(
       "Use the specialized reviewer subagent to check the completed task.",
